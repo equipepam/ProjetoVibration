@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/codigando.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.GeoBroker" />
+</feature>
+
+<preference name="Geolocation" value="on" />
+</head>
+<script>
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            console.log("Latitude: " + latitude);
+            console.log("Longitude: " + longitude);
+        },
+        function (error) {
+            console.error("Erro ao obter a geolocalização: " + error.message);
+        }
+    );
+}
+function mostrarNotificacao() {
+    var mensagem = "Bem-vindo! Você está logado.";
+    var titulo = "Login bem-sucedido";
+
+    // Usar o plugin de notificação para exibir a notificação
+    navigator.notification.alert(mensagem, null, titulo, "OK");
+}
+function exibirLocalizacao() {
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var mensagem = "Sua localização: Latitude " + latitude + ", Longitude " + longitude;
+            var titulo = "Localização Atual";
+
+            // Usar o plugin de notificação para exibir a localização
+            navigator.notification.alert(mensagem, null, titulo, "OK");
+        },
+        function (error) {
+            console.error("Erro ao obter a geolocalização: " + error.message);
+        }
+    );
+}
+
+</script>
+</head>
+<body>
+ <header>
+        <nav>
+          <a class="logo" href="/">codigando</a>
+          <div class="mobile-menu">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="codigando.html">Início</a></li>
+            <li><a href="tela2.html">Pontos</a></li>
+            <li><a href="selecao.html">Passagem</a></li>
+            <li><a href="bot.html">Entretenimento</a></li>
+            <div class="btn-localizacao">
+    <a href="#" onclick="exibirLocalizacao()">Exibir Localização</a>
+</div>
+<a href="bateria.html"><button class="btn-donate" id="botaoVibrar" onclick="vibrar(this)">Bateria</button></a>
+          </ul>
+        </nav>
+       
+    </header>
+    <main>
+    
+   <div class="searchBox">
+
+            <input class="searchInput" type="text" name="" placeholder="Digite o seu destino">
+            <button class="searchButton" href="#">
+                   
+                  
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+  <g clip-path="url(#clip0_2_17)">
+    <g filter="url(#filter0_d_2_17)">
+      <path d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"></path>
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_d_2_17" x="-0.418549" y="3.70435" width="29.7139" height="29.7139" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+      <feOffset dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+      <feComposite in2="hardAlpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_17"></feBlend>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_17" result="shape"></feBlend>
+    </filter>
+    <clipPath id="clip0_2_17">
+      <rect width="28.0702" height="28.0702" fill="white" transform="translate(0.403503 0.526367)"></rect>
+    </clipPath>
+  </defs>
+</svg>
+                     
+
+            </button>
+        </div>
+    </main>
+
+
+
+  <div class="mt">
+      <h2 id="and"> Deseja viajar de</h2>
+  </div>
+
+
+
+   <div class="ts">
+        <a href="telaviao.html"> <button class="b1" id="botaoVibrar"> <img src="images/aviao.png" class="lim-ta"> </button></a>
+        <a href="telarro.html"><button class="b2" id="botaoVibrar"> <img src="images/carro.png" class="lim-to"> </button></a>
+          <a href="telem.html"><button class="b3" id="botaoVibrar"> <img src="images/trem.png" class="lim-te"> </button></a>
+         <a href="telavio.html"><button class="b4" id="botaoVibrar"> <img src="images/navio.png" class="lim-tu"> </button></a>
+      </div>
+
+      
+
+<div class="dt">
+
+    <h2 id="and2"> Selecione a data </h2>
+    <div class="dt2">
+
+    </div>
+</div>
+
+<style>
+ /**       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .calendar {
+            max-width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .days span {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .days span:hover {
+            background-color: #f2f2f2;
+        }
+
+        .days span.selected {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+                body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .calendar {
+            max-width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            background-color: #f2f2f2;
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .days span {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .days span:hover {
+            background-color: #f2f2f2;
+        }
+
+        .days span.selected {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+**/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+       
+        .calendar:hover{
+            cursor:pointer;
+
+        }
+        .calendar {
+            max-width: 300px;
+            margin: 0 auto;
+            border: 2px solid black;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            perspective: 500px;
+            position:relative;
+            top:200px;
+        }
+
+       .zoomed{
+    position: fixed;
+    top: 0;
+    left: 200;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    y-index:1;
+    transform: scale(1.2, 1);
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+            color: white;
+            border-bottom: 3px solid white;
+            background: black;
+            cursor:pointer;
+
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .days span {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+            border: 1px  #ccc;
+            cursor: pointer;
+            transition: background-color 0.7s ease;
+            transform-style: preserve-3d;
+        }
+
+        .days span:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .days span.selected {
+            background: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .controls button {
+            margin: 0 5px;
+            cursor: pointer;
+            background: white;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .controls button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        #selectedDate {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar" id="calendario">
+            <button class="b" id="zoomButton">Ampliar</button>
+
+        <p id="calendario">
+        <div class="header">
+            <div class="controls">
+                <button onclick="prevMonth()">&lt;</button>
+                <span id="month"></span>
+                <button onclick="nextMonth()">&gt;</button>
+            </div>
+        </div>
+        <div class="weekdays">
+            <span>Dom</span>
+            <span>Seg</span>
+            <span>Ter</span>
+            <span>Qua</span>
+            <span>Qui</span>
+            <span>Sex</span>
+            <span>Sáb</span>
+        </div>
+        <div class="days" id="days"></div>
+    </div>
+
+    <div id="selectedDate"></div>
+
+    <script>
+        const daysElement = document.getElementById('days');
+        const monthElement = document.getElementById('month');
+        const selectedDateElement = document.getElementById('selectedDate');
+        let selectedDays = [];
+
+        function updateCalendar(currentDate) {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const totalDays = lastDay.getDate();
+
+            monthElement.textContent = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(currentDate);
+
+            let dayIndex = firstDay.getDay();
+
+            let daysHTML = '';
+            for (let day = 1; day <= totalDays; day++) {
+                if (day === 1) {
+                    daysHTML += `<span style="grid-column: ${dayIndex + 1}" onclick="selectDate(${day}, ${month + 1}, ${year})">${day}</span>`;
+                } else {
+                    daysHTML += `<span onclick="selectDate(${day}, ${month + 1}, ${year})">${day}</span>`;
+                }
+
+                dayIndex++;
+                if (dayIndex > 6) {
+                    dayIndex = 0;
+                }
+            }
+
+            daysElement.innerHTML = daysHTML;
+        }
+
+        function prevMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            updateCalendar(currentDate);
+        }
+
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            updateCalendar(currentDate);
+        }
+
+        function selectDate(day, month, year) {
+            const selectedDay = new Date(year, month - 1, day);
+            const selectedDateElement = document.querySelector('.selected');
+            if (selectedDateElement) {
+                selectedDateElement.classList.remove('selected');
+            }
+
+            const targetDateElement = event.target;
+            targetDateElement.classList.add('selected');
+
+            selectedDays.push(selectedDay);
+            if (selectedDays.length > 2) {
+                selectedDays.shift();
+            }
+
+            displaySelectedDates();
+        }
+
+        function displaySelectedDates() {
+            selectedDateElement.innerHTML = '';
+
+            selectedDays.forEach((selectedDay, index) => {
+                const day = selectedDay.getDate();
+                const month = selectedDay.getMonth() + 1;
+                const year = selectedDay.getFullYear();
+                const weekday = getWeekdayName(selectedDay.getDay());
+                const message = `Você selecionou o dia ${day}/${month}/${year} (${weekday})`;
+                selectedDateElement.innerHTML += message;
+                if (index === 0) {
+                    selectedDateElement.innerHTML += '<br>';
+                }
+            });
+        }
+
+        function getWeekdayName(dayIndex) {
+            const weekdays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+            return weekdays[dayIndex];
+        }
+
+        const currentDate = new Date();
+        updateCalendar(currentDate);
+
+       const calendario = document.getElementById('calendario');
+const zoomButton = document.getElementById('zoomButton');
+
+let isFullScreen = false;
+
+zoomButton.addEventListener('click', function() {
+    if (isFullScreen) {
+        exitFullScreen();
+    } else {
+        enterFullScreen();
+    }
+    isFullScreen = !isFullScreen;
+});
+
+function enterFullScreen() {
+   calendario.classList.add('zoomed');
+    document.documentElement.requestFullscreen(); // Solicita o modo de tela cheia
+}
+
+function exitFullScreen() {
+   calendario.classList.remove('zoomed');
+    document.exitFullscreen(); // Sai do modo de tela cheia
+}
+
+    </script>
+        
+    
+    <script src="css/script.js"> </script>
+</body>
+</html>

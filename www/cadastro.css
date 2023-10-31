@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color:  hsla(217 100% 56% / 1);
+}
+
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px;
+    width: 300px;
+    height: 800px;
+}
+
+.areaLogin img {
+    width: 420px;
+}
+
+.formLogin h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+    color: black;
+}
+
+.formLogin p {
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.formLogin input {
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+.formLogin input:focus {
+    border: 1px solid  hsla(194 100% 69% / 1);
+}
+
+.formLogin label {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.formLogin a {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: black;
+    transition: all linear 160ms;
+}
+
+.formLogin a:hover {
+    color:  hsla(194 100% 69% / 1);
+}
+.btn-entrar {
+ appearance: button;
+ background-color: #1899D6;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 13px 19px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
+ width: 250px;
+ height: 50px;
+ margin-top: 20px;
+}
+
+.btn-entrar:after {
+ background-clip: padding-box;
+ background-color: #1CB0F6;
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ bottom: -4px;
+ content: "";
+ left: 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ z-index: -1;
+}
+
+.btn-entrar:main, .btn-entrar:focus {
+ user-select: auto;
+}
+
+.btn-entrar:hover:not(:disabled) {
+ filter: brightness(1.1);
+}
+
+.btn-entrar:disabled {
+ cursor: auto;
+}
+
+.btn-entrar:active:after {
+ border-width: 0 0 0px;
+}
+
+.btn-entrar:active {
+ padding-bottom: 10px;
+}
+.btn-entrar a{
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin-top: 5px;
+}
+.acesso a{
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: -5px;
+}
+.btn-google{
+    margin-top: 35px;
+}

@@ -1,0 +1,163 @@
+/* This is a CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+   body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.cima{
+    background:  hsla(217 100% 56% / 1);
+    width: auto;
+    height: 18vh;
+    border-radius: 0px 0px 60px 60px;
+    display: flex;
+}
+.cima h2{
+    color: white;
+       margin: 45px auto;
+      position: relative;
+      left: 15px;
+}
+.cima i{
+    color: white;
+    font-size: 30px;
+       margin: auto;
+       margin-top: 42px;
+       transform: rotate(90deg);
+       left: 25px;
+       position: relative;
+}
+.titulinho{
+      color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    font-weight: 700;
+ letter-spacing: 5px;
+    left: 30px;
+    top: 60px;
+    font-size: 25px;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.cima p{
+     color: white;
+    font-size: 30px;
+       margin: 40px auto;
+}
+
+
+.botao{
+    position: relative;
+    top: 90px;
+    right: 340px;
+
+}
+
+.card {
+ cursor: pointer;
+ width: 300px;
+ height: 120px;
+ margin: 25px 0;
+ background: rgb(255, 255, 255);
+ border-radius: 15px;
+ border: 1px solid rgba(0, 0, 255, .2);
+ transition: all .2s;
+ display: flex;
+}
+.d1 {
+   margin-left: 30px;
+}
+.d2 {
+
+}
+.ll {
+    color: blue;
+}
+.lm {
+    color: orange;
+}
+h4 {
+    color: grey;
+    margin-top: -20px;
+}
+h6 {
+    color: grey;
+    margin-top: -20px;
+}
+.ic {
+    margin-top: 25px;
+}
+.gol{
+     cursor: pointer;
+ width: 300px;
+ height: 70px;
+ margin: -10px 0;
+ background: rgb(255, 255, 255);
+ border-radius: 15px;
+ border: 1px solid rgba(0, 0, 255, .2);
+ transition: all .2s;
+ display: flex; 
+}
+.gol img{
+    margin: 10px 15px;
+}
+.gol h1{
+    margin: 20px 40px;
+    color: black;
+}
+.card2{
+   cursor: pointer;
+ width: 300px;
+ height: 120px;
+ margin: 80px 0;
+ background: rgb(255, 255, 255);
+ border-radius: 15px;
+ border: 1px solid rgba(0, 0, 255, .2);
+ transition: all .2s;
+ display: flex;  
+}
+.card2 .d1 {
+   margin-left: 30px;
+}
+.d2 {
+
+}
+.card2 .ll {
+    color: blue;
+}
+.card2 .lm {
+    color: orange;
+}
+.card2 h4 {
+    color: grey;
+    margin-top: -20px;
+}
+.card2 h6 {
+    color: grey;
+    margin-top: -20px;
+}
+.card2 .ic {
+    margin-top: 25px;
+}
+.latam{
+     cursor: pointer;
+ width: 300px;
+ height: 70px;
+ margin: -65px 0;
+ background: rgb(255, 255, 255);
+ border-radius: 15px;
+ border: 1px solid rgba(0, 0, 255, .2);
+ transition: all .2s;
+ display: flex; 
+}
+.latam img{
+    margin: 10px 15px;
+}
+.latam h1{
+    margin: 20px 20px;
+    color: black;
+}
+a{
+    text-decoration: none;
+}

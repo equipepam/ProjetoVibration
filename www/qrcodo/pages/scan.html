@@ -1,0 +1,83 @@
+<template>
+    <div class="page">
+
+            <style>
+                .title{
+                    color: #f3081b; 
+                }
+                .block-title{
+                    font-size: larger;
+                }
+
+            .page-content {
+                color: #f3081b; 
+            }
+
+            .page-content a {
+                margin-left: 8.5rem;
+                font-size: larger;
+                color: #f3081b; 
+                font-weight: bold;
+            }
+
+            .button {
+                color: #f3081b; 
+            }
+
+             </style>
+        <div class="page-content">
+            <button class="button" @click=${doScan}>Ler QR Code/Código de barras</button>
+            ${ scan.value.text ?
+            $h`
+
+            <div class="block">
+                Scan： ${scan.value.format} コード： ${scan.value.text}
+            </div>
+            `
+            :
+            ''
+            }
+        </div>
+    </div>
+
+</template>
+<script>
+    export default (props, {
+        $store
+    }) => {
+        // ストアからデータを取得する
+        const {
+            scan
+        } = $store.getters;
+
+        const doScan = async () => {
+            try {
+                // スキャン結果を受け取る
+                console.log(monaca.BarcodeScanner)
+
+                const res = await execute();
+                // スキャン結果を適用する
+                $store.dispatch('addScan', res.data);
+            } catch (e) {
+                // キャンセルした場合
+                alert(JSON.stringify(e))
+            }
+        };
+        // コールバック方式からPromiseに変換する関数
+        const execute = () => {
+            return new Promise((res, rej) => {
+                const option = {
+                    "oneShot": true,
+                    "timeoutPrompt": {
+                        "show": true,
+                        "timeout": 5,
+                        "prompt": "Not detected"
+                    }
+                }
+                // バーコードスキャナー起動
+                monaca.BarcodeScanner.scan(res, rej, option);
+            });
+        }
+        return $render;
+    }
+</script>

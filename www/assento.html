@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assento.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+ .poltrona.selected {
+        background-color: gray;
+    }
+    </style>
+</head>
+<body>
+  <div class="cima">
+      <h2>GRU</h2><i class="bi bi-airplane-engines-fill"></i><p> - - - - - - - - -</p><h2>BER</h2>
+      <a href="selecao.html"><div class="botao"><i class="bi bi-arrow-left-square-fill"></i></div></a>
+  </div>
+  <div class="reserva"> 
+      <p class="a">Reservado <i class="bi bi-record-circle-fill"></i></p>
+       <p class="b">Selecionado <i class="bi bi-record-circle-fill"></i></p>
+        <p class="c">Disponível <i class="bi bi-record-circle-fill"></i></p>
+  </div>
+    <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>1</p>
+            <div class="poltrona" ></div>
+            <div class="poltrona" "></div>
+            <div class="poltrona"></div>
+        </div>
+           <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>2</p>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this) "></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+        </div>   <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>3</p>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this) "></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+        </div>   <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>4</p>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this) "></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+        </div>   <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>5</p>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this) "></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+        </div>   <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>6</p>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this) "></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+        </div>   <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+        <div class="fileira">
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)  "></div>
+            <p>7</p>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this) "></div>
+            <div class="poltrona" onclick="selecionarPoltrona(this)"></div>
+        </div>   <div class="sala">
+        <!-- Adicionando 6 fileiras de 7 poltronas cada -->
+    </div>
+   <a href="compra.html"><button class="btn-donate" id="botaoComprar">Comprar</button></a>
+    <script>
+    function selecionarPoltrona(poltrona) {
+            poltrona.classList.toggle('selected');
+        }
+
+        function vibrarAoClicar() {
+            if ('vibrate' in navigator) {
+                // Faça o dispositivo vibrar por 500 milissegundos (0,5 segundos).
+                navigator.vibrate(20000);
+            } else {
+                console.log('A API de vibração não é suportada neste dispositivo.');
+            }
+        }
+
+        // Atribua a função vibrarAoClicar ao evento de clique do botão
+        document.getElementById("botaoComprar").addEventListener("click", vibrarAoClicar);
+    </script>
+</body>
+</html>

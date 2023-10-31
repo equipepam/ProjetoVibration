@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
+.logo{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+ letter-spacing: 5px;
+ line-height: 20px;
+}
+
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: hsla(217 100% 56% / 1);
+    height: 14vh;
+    border-radius: 0px 0px 60px 60px;
+}
+
+main{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    z-index: 1000;
+
+}
+
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div{
+    width:32px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.952);
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+    body{
+        overflow-x: hidden;
+    }
+
+.nav-list{
+    position: absolute;
+    top: 12vh;
+    right: 0;
+    width: 50vw;
+    height: 88vh;
+    background: hsla(217 100% 56% / 1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+}
+
+.nav-list li{
+    margin-left: 0;
+    opacity: 0;
+}
+.mobile-menu{
+    display: block;
+}
+}
+.nav-list.active{
+    transform: translateX(0);
+}
+
+    @keyframes navLinkFade{
+    from
+    {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1{
+   transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+.mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+.searchBox {
+  display: flex;
+  max-width: 300px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #2f3640;
+  border-radius: 50px;
+  position: relative;
+  height: 45px;
+  float:flex;
+  top: 30px;
+}
+
+.searchButton {
+  color: white;
+  position: absolute;
+  right: 8px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+  border: 0;
+  display: inline-block;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+  transform: translateY(-3px);
+}
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.btn-donate{
+ font-size: 20px;
+ background-color: transparent;
+ border: none;
+ color: white;
+}
+
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  padding: 24px 46px 24px 26px;
+}
+
+.mt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.ts{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 120px;
+}
+
+.lim-ta{
+width: 50px;
+height: 50px;
+cursor: pointer;
+}
+.lim-to{
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+}
+.lim-te{
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+}
+.lim-tu{
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.b1{
+    border-radius: 8px;
+    background: hsla(194 100% 69% / 1);
+    height: 80px;
+    width: 80px;
+}
+.b2{
+    border-radius: 8px;
+    background: hsla(194 100% 69% / 1);
+     height: 80px;
+    width: 80px;
+}
+.b3{
+    border-radius: 8px;
+    background: hsla(194 100% 69% / 1);
+     height: 80px;
+    width: 80px;
+}
+.b4{
+    border-radius: 8px;
+    background: hsla(194 100% 69% / 1);
+     height: 80px;
+    width: 80px;
+}
+
+#and{
+    color: black;
+    position: relative;
+    display: flex;
+    float: flex;
+    top: 80px;
+}
+
+#and2{
+    color: black;
+    float: flex;
+    display: flex;
+    position: relative;
+    left: 80px;
+    top: 170px;
+}

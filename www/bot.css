@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: 'Inter', sans-serif;
+}
+ 
+
+.expli{
+    width: 50vw;
+    height: 50vh;
+    background: hsla(194 100% 69% / 1);    
+    position: relative;
+    left: 95px;
+    top: 120px;
+    display: flex;
+    border-radius: 12px;
+    box-shadow: 0px 10px 40px #00000056;   
+
+}
+
+.robru{
+ width: auto;
+ height: 18vh;
+background: hsla(217 100% 56% / 1);
+border-radius: 0px 0px 60px 60px;
+position: relative;
+display: flex;
+}
+.botao{
+    display: flex;
+    position: relative;
+    top: 100px;
+    right: 255px;
+    color: white;
+}
+.btn-donate {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  width: 150px;
+  padding: 0.9em 1.4em;
+  min-width: 120px;
+  min-height: 44px;
+  font-size: var(--size, 1rem);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  margin-top: 100px;
+}
+
+.btn-donate:hover {
+  background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+.titulinho{
+      color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    font-weight: 700;
+ letter-spacing: 5px;
+    left: 60px;
+    top: 60px;
+    font-size: 25px;
+    text-transform: uppercase;
+    display: flex;
+}
+.titulinho:hover{
+    opacity: 0.7;
+}
+.joge{
+    position: relative;
+    left: 248px;
+}
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+.chat-container {
+
+  max-width: 400px;
+
+  width: 80%;
+
+  background: hsla(194 100% 69% / 1);;
+
+  border-radius: 10px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+
+  margin: 120px auto 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+
+}
+
+ 
+
+.bot-message .avatar, .user-message .avatar {
+
+  width: 30px;
+
+  height: 30px;
+
+  border-radius: 50%;
+
+  margin-right: 10px;
+
+  object-fit: cover;
+
+}
+
+ 
+
+.bot-message .message-content, .user-message .message-content {
+
+  max-width: 70%;
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+}
+
+ 
+
+.user-message .message-content {
+
+  background-color: #007BFF;
+
+  color: white;
+
+}
+
+ 
+
+.bot-message .message-content {
+
+  background-color: #E0E0E0;
+
+  color: black;
+
+}
+
+ 
+
+.button-container {
+
+  display: flex;
+
+  justify-content: space-around;
+
+  margin-top: 10px;
+
+}
+
+ 
+
+.response-button {
+
+  padding: 10px 20px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: #007BFF;
+
+  color: white;
+
+}
+
+ 
+
+.response-button:hover {
+
+  background-color: #0056b3;
+
+}
+
+ 
+
+ 
+
+ 
+
+div small{
+
+  color: white;
+
+  align-items: center;
+
+ 
+
+}
+
+ 
+
+ 
+
+div img:hover{
+
+  opacity: 0.8;
+
+  cursor: pointer;
+
+}

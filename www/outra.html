@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="outra.css">
+    <script src="components/loader.js"></script>
+</head>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("btnCapturarFoto").addEventListener("click", capturarFoto);
+    document.getElementById("scanButton").addEventListener("click", digitalizarCodigo);
+    document.getElementById("btnPagarQRCODE").addEventListener("click", pagarComQRCODE);
+    document.addEventListener("deviceready", onDeviceReady, false);
+});
+
+function capturarFoto() {
+
+    var options = {
+        quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI,
+        sourceType: Camera.PictureSourceType.CAMERA,
+        encodingType: Camera.EncodingType.JPEG,
+        saveToPhotoAlbum: true
+    };
+
+    navigator.camera.getPicture(onFotoCapturada, onErroCapturaFoto, options);
+}
+
+function digitalizarCodigo() {
+
+    cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            if (!result.cancelled) {
+                document.getElementById("scanResult").textContent = "Resultado da digitalização: " + result.text;
+            }
+        },
+        function (error) {
+            console.error("Erro ao digitalizar: " + error);
+        }
+    );
+}
+
+function pagarComQRCODE() {
+
+    // Implemente a lógica para pagamento com QRCODE
+    // Certifique-se de ter o plugin adequado instalado e configurado para isso
+    // Utilize a lógica necessária para processar o pagamento
+}
+
+function onDeviceReady() {
+    console.log("Dispositivo pronto.");
+}
+
+function onFotoCapturada(imageURI) {
+    console.log("Imagem capturada: " + imageURI);
+}
+
+function onErroCapturaFoto(error) {
+    console.error("Erro ao capturar a imagem: " + error);
+}
+function processarPagamentoComQRCODE(qrCodeContent) {
+    // Aqui você deve enviar o conteúdo do QRCODE para o seu serviço de pagamento ou gateway de pagamento
+    // Certifique-se de que o serviço de pagamento está configurado e você tem as credenciais necessárias
+
+    // Exemplo simplificado: envio de uma solicitação POST para um serviço de pagamento fictício
+    const pagamentoEndpoint = 'https://api.exemplo.com/pagamento';
+    
+    const requestData = {
+        qrCodeContent: qrCodeContent,
+        // Outros dados necessários para a transação
+    };
+
+    fetch(pagamentoEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Outros cabeçalhos necessários (por exemplo, autenticação)
+        },
+        body: JSON.stringify(requestData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Aqui você pode processar a resposta do serviço de pagamento
+        if (data.status === 'sucesso') {
+            alert('Pagamento bem-sucedido!');
+        } else {
+            alert('Erro no pagamento: ' + data.mensagem);
+        }
+    })
+    .catch(error => {
+        console.error('Erro na solicitação de pagamento: ' + error);
+        alert('Erro no pagamento. Tente novamente mais tarde.');
+    });
+}
+function pagarComQRCODE() {
+
+    const qrCodeContent = 'Aqui você deve ter o conteúdo do QRCODE escaneado';
+    processarPagamentoComQRCODE(qrCodeContent);
+    function pagarComQRCODE() {
+
+    // Aqui você deve ter o conteúdo do QR code escaneado
+    const qrCodeContent = document.getElementById("scanResult").textContent;
+
+    // Certifique-se de que qrCodeContent contenha o conteúdo do QR code apropriado
+    if (!qrCodeContent) {
+        alert("Nenhum QR code escaneado.");
+        return;
+    }
+
+    // Aqui você pode adicionar a lógica de interação com o serviço de pagamento
+    processarPagamentoComQRCODE(qrCodeContent);
+}
+
+}
+
+</script>
+<body>
+   <div class="botao"><a href="compra.html"><button><i class="fa fa-arrow-left" aria-hidden="true"></i></button></a>
+    <center>
+    <h1>Digitalizar <span>Cartão</span></h1>
+    <img src="imgs/cartaoo.jpg" width="400px">
+<div class="b">
+<button id="btnCapturarFoto" onclick="capturarFoto()">Escanear Cartão</button>
+</div><br>
+<h2>OU</h2>
+<div class="b">
+<a href="qrcodo/index2.html"><button>Escanear QRcode</button></a>
+</div>
+
+    </center>
+</body>
+</html>

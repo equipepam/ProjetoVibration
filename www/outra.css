@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+    font-family: 'Inter', sans-serif;
+}
+.b button{
+    color: white;
+    background: hsla(217 100% 56% / 1);;
+    height: 80px;
+    width: 250px;
+    border-radius: 20px;
+    font-size: 30px;
+    margin-top: 25px;
+}
+.botao button{
+
+}
+
+h1{
+    font-size: 50px;
+    color: black;
+    font-weight: 1000;
+ letter-spacing: 5px;
+}
+span{
+    font-size: 50px;
+    color: hsla(194 100% 69% / 1);
+    font-weight: 1000;
+ letter-spacing: 5px;
+}

@@ -1,0 +1,126 @@
+/* This is a CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+   body {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.cima{
+    background:  hsla(217 100% 56% / 1);
+    width: auto;
+    height: 18vh;
+    border-radius: 0px 0px 60px 60px;
+    display: flex;
+}
+
+.cima h2{
+    color: white;
+       margin: 45px auto;
+      position: relative;
+      left: 15px;
+}
+.cima i{
+    color: white;
+    font-size: 30px;
+       margin: auto;
+       margin-top: 42px;
+       transform: rotate(90deg);
+       left: 25px;
+       position: relative;
+}
+
+.cima p{
+     color: white;
+    font-size: 30px;
+       margin: 40px auto;
+}
+
+.sala {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+.reserva{
+ display: flex; 
+}
+.reserva p{
+    margin: 50px auto;
+    font-size: 18px;
+}
+ .a{
+  color: #ec5353;
+}
+.b{
+    color: #a9a9a9;
+}
+.c{
+   color: hsla(194 100% 69% / 1);
+}
+.fileira {
+    display: flex;
+}
+.sala{
+    margin-top: -10px;
+}
+.poltrona {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    margin: 10px;
+    cursor: pointer;
+    background: hsla(194 100% 69% / 1);
+}
+.poltrona i{
+    width: 50px;
+    font-size: 50px;
+}
+
+.btn-donate {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  width: 150px;
+  padding: 0.9em 1.4em;
+  min-width: 120px;
+  min-height: 44px;
+  font-size: 22px;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+  box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  margin-top: 100px;
+}
+
+
+.btn-donate a{
+    margin: 200px;
+}
+
+.btn-donate:hover {
+  background-position: right top;
+}
+
+.btn-donate:is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-donate {
+    transition: linear;
+  }
+}
+.botao{
+    position: relative;
+    top: 90px;
+    right: 340px;
+
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/pergun.css">
+<title>Questionário de Países</title>
+</head>
+<body>
+<div id="chat"></div>
+<button class="response-button" onclick="answerQuestion('Sim')">Sim</button>
+<button class="response-button" onclick="answerQuestion('Não')">Não</button>
+<script>
+        const chatContainer = document.getElementById('chat');
+        let step = 0;
+
+        const decisionTree = [
+            {
+                question: 'Você gosta de massas?',
+                country: 'Itália'
+            },
+            {
+                question: 'Você gosta de muitos pontos turísticos?',
+                country: 'França'
+            },
+            {
+                question: 'Você gosta de uma grande diversidade cultural?',
+                country: 'Brasil'
+            },
+            {
+                question: 'Você gosta de aventuras e culinária exótica?',
+                country: 'Tailândia'
+            },
+            {
+                question: 'Você gosta de paisagens naturais deslumbrantes?',
+                country: 'Nova Zelândia'
+            },
+            {
+                question: 'Você gosta de uma qualidade de vida alta?',
+                country: 'Suíça'
+            },
+            {
+                question: 'Você gosta de calor e praias?',
+                country: 'Austrália'
+            },
+            {
+                question: 'Você gosta de inovação e tecnologia?',
+                country: 'Estados Unidos'
+            },
+            {
+                question: 'Você gosta de riquezas e arquitetura moderna?',
+                country: 'Emirados Árabes Unidos'
+            },
+            {
+                question: 'Você gosta de cultura histórica e paisagens variadas?',
+                country: 'Espanha'
+            }
+        ];
+
+ 
+
+        function addMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = message;
+            chatContainer.appendChild(messageDiv);
+        }
+
+ 
+
+        function askQuestion() {
+            if (step >= decisionTree.length) {
+                const finalCountry = decisionTree[step - 1].country;
+                addMessage(`Fim do questionário. Recomendamos o país: ${finalCountry}.`, 'bot');
+                document.querySelectorAll('.response-button').forEach(button => button.style.display = 'none');
+                return;
+            }
+
+ 
+
+            const currentStep = decisionTree[step];
+            addMessage(currentStep.question, 'bot');
+            step++;
+        }
+
+ 
+
+        function answerQuestion(response) {
+            if (step <= decisionTree.length) {
+                const currentStep = decisionTree[step - 1];
+                addMessage(response, 'user');
+
+ 
+
+                if (response === 'Sim') {
+                    const finalCountry = currentStep.country;
+                    addMessage(`Com base nas suas respostas, recomendamos o país: ${finalCountry}.`, 'bot');
+                    document.querySelectorAll('.response-button').forEach(button => button.style.display = 'none');
+                }
+
+ 
+
+                if (step >= decisionTree.length) {
+                    addMessage('Fim do questionário. Não conseguimos encontrar um país adequado com base nas suas respostas.', 'bot');
+                    document.querySelectorAll('.response-button').forEach(button => button.style.display = 'none');
+                }
+
+ 
+
+                askQuestion();
+            }
+        }
+
+ 
+
+        askQuestion();
+</script>
+</body>
+</html>
